@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{physics,xcolor}
+\usepackage{amsmath,amssymb,setspace,soul,parskip}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{\leftmark}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\onehalfspacing
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\title{Fourier Series}
+\author{Dr. Manu S}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter*{Syllabus}
+\section*{Fourier Series}
+Periodic Functions, Orthogonality of sine and cosine functions, Dirichlet conditions (statement only). Expansion of periodic functions in a series of sine and cosine functions and determination of Fourier coefficients. Complex representation of Fourier Series. Expansion of functions with arbitrary period. Concept of change of scale, Fourier series for periodic rectangular wave; Half-wave rectifier, Trapezoidal wave, Application to square wave, triangular wave and saw tooth wave (superposition of first three components to be shown graphically). 
+
+\section*{Optical Fibers}
+Optical fiber - principle, description and classification; why glass fibers? Coherent bundle; Numerical aperture of fiber; Attenuation in optical fibers - limit multi-mode optical fibers; Ray dispersion in multi-mode step index fibers;
+
+
+
+\chapter{Fourier Series}
+
+\section{Introduction}
+Fourier series is an expansion of a periodic function f(x) in terms of an infinite sum of sines and cosines.  It was first introduced by French mathematician Baron Jean Baptiste Joseph Fourier, (1768 - 1830), while he was trying to solve heat conduction problems.  
+
+Taylor series are useful to approximate a function in the neighborhood of a point, but they are not very useful to approximate a periodic function over a significant portion of its domain.  These approximations are important in many engineering applications, including heat flow and fluid flow, voltage waveforms, acoustics and some other real world problems in science and engineering fields.
+
+In the Taylor approximations to functions, a function is approximated by a series of polynomial terms.  These approximations were more accurate when it is closer to the point at which the derivatives were evaluated.  In Fourier case, the approximation is over an interval rather than approximations near a point.  Hence, instead of using the mean value theorem for derivatives (which is what underlies the idea of Taylor approximation), we use the mean value theorem for integrals.
+
+For Taylor case, the better our approximation was, the more closely our series of terms involving derivatives would approximate \textit{the actual derivatives of the function itself at the point in question}.  In the Fourier case, the better our approximation is, the more closely our series terms will approximate \textit{the average value of the function over the interval in question}.  
+
+In Taylor Series, the value of a function at a point was approximated by a sum of terms involving successively higher powers of x modified by successively higher derivatives. This is done in order to try to account for how th function curved near the point in question since the higher--order derivatives and polynomials have (potentially) greater curvature than the lower order ones.
+
+For periodic approximations, instead of using derivatives to get an idea of curviness near a point, integrals of various since function of different periods in order to account for whatever curviness our periodic function displays over the interval in question.  So for periodic approximations we start with a constant term and then modify it with curvier and curvier trigonometric functions, just as with Taylor series we start with a constant (the slope of the curve at that point) and then modified it with curvier and curvier polynomial functions. 
+
+That's the Theory, anyway.  To consider this idea in more detail, we should know some definitions and common terms used in this chapter, Fourier series.
+
+
+\section{Periodic Function}
+A function $f(x)$ is said to have period P if $f(x+P)= f(x)$ for all $x$.  The smallest positive value of P is called the fundamental period.  
+
+The trigonometric functions $\sin x$ and $\cos x$ are examples of periodic functions with fundamental period 2$\pi$ and $\tan x$ is periodic with fundamental period $\pi$. 
+
+\section{Even function and Odd function}
+\subsection{Even functions}
+Let $f$ : [$-\pi$,$\pi$] $\to$ $\mathbb{R}$.  Then $f(x)$ is called even, if $f(-x)$ = $f(x)$ for all $x$ $\in$ [$-\pi$,$\pi$]. 
+
+For example: consider  \[
+                        y = f(x) = x^2
+                       \]
+we get, \[
+         f(-x) = (-x)^2 = x^2 = f(x)
+         \Longrightarrow f(-x) = f(x)   
+        \]   $\therefore$	the function $x^2$ is an even function.
+        
+consider $f(x)$ = $\cos x$ replace $x$ by -- $x$ \[\Longrightarrow f(-x) = \cos -x = cos x = f(x)\][$\because$	$\cos -\theta$ = $\cos \theta$]
+Hence $\cos x$ is even function.
+
+Geometrically speaking, the graph face of even function is symmetric with respect to the y--axis,meaning that its graph remains unchanged after reflection about the y--axis.
+
+Examples of even function are $\mod x$, $x^2$, $\cos x$ $\cosh x$,$\dots$ etc., or any linear combination of these functions.
+
+\subsection{Odd function}
+ Let $f$ : [$-\pi$,$\pi$] $\to$ $\mathbb{R}$.  Then $f(x)$ is called odd, if $f(-x)$ = $-f(x)$, for all $x$ $\in$ [$-\pi$,$\pi$].
+ 
+For example : Consider $f(x)$ = $x$, if $x$ is replaced by $-x$, we get
+\[f(-x) = -x = -(x) = -f(x)\]
+$\Longrightarrow f(-x)$ = $f(x)$.  $\therefore$ the function $x$ is an odd function.  
+
+Consider, $f(x)$ = $\sin x$ and replace $x$ by $-x$ then
+\[f(-x) = \sin(-x) = - sinx = f(x)\]
+$\because \sin(-\theta) = - \sin \theta$
+$\Longrightarrow f(-x) = -f(x)$.  Hence, $\sin x$ is an odd function.
+
+Geometrically, the graph of an odd function has rotational symmetry with respect to the origin, meaning that its graph remains unchanged after rotation of 180 degrees about the origin.
+
+Examples of odd functions are $x$, $x^3$, $\sin x$ $\dots$ etc., or any linear combination of these functions.
+
+\end{document}          
